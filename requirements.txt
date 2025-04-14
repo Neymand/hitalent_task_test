@@ -1,0 +1,11 @@
+alembic
+fastapi
+typing-inspection
+typing_extensions
+SQLAlchemy
+uvicorn
+pytest
+psycopg2
+pydantic
+pydantic_core
+requests

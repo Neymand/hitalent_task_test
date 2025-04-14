@@ -1,0 +1,23 @@
+
+services:
+  app:
+    container_name: my_project_app
+    build: ./
+    depends_on:
+      - db
+    volumes:
+       - ./app:/src/app
+    ports:
+      - 8000:8000
+
+    environment:
+      - DATABASE_URL=postgresql://postgres:admin@db:5432/mydatabase
+  db:
+    container_name: my_project_postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: mydatabase
+    volumes:
+      - .postgres:/var/lib/postgres/data
